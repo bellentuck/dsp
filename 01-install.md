@@ -37,7 +37,7 @@ import sklearn
 
 Did you install Python 2 or 3? Why? How can you check the version of Python installed if you happen to be on an unfamiliar computer?
 
->> I installed Python 2, recommended in Learn Python the Hard Way because Python 3 is (a) not backwards compatible and (b) has yet to be widely adopted. I can check the version of Python installed on an unfamiliar computer by running Python; startup text will include the version number.
+>> REPLACE THIS TEXT WITH YOUR RESPONSE
 
 ---
 
