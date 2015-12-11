@@ -31,7 +31,7 @@ Both Emacs and vim have built-in interactive tutorials that you can try.
 
 What terminal editor will you use? How did you make your decision?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> After reading, tutorial-ing, and playing around (or trying to), I'm leaning toward entering the Emacs camp. Ultimately, Emacs seems to be the most useful/powerful tool out of Emacs, Vim, and Nano ("more than a text editor," Emacs can do the most things), and so seems most worth my while to learn. I also aim to familiarize myself with basic vi/Vim commands. 
 
 ---
 
@@ -61,6 +61,19 @@ We will also use Jupyter (IPython) notebooks, but this does not remove the need 
 
 What graphical editor will you use? How did you make your decision? What are some interesting features of your editor? What are some useful keyboard shortcuts for your editor? How do you customize your editor?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> I'm planning to go with Spyder. My hunch is that ultimately I'll want to transition to Emacs, but after checking out various options I think that for now, Spyder is the way to go. It comes fully configured for Python, so has lots of cool Python-specific features. The most obvious and probably most useful is the IPython console right next to the editor, just begging to be used for more efficient debugging. (Another option available for running a code snippet would be to run it in its own tab in the separate Console window.) I like how I can chunk code into "cells" and then test these cells in the IPython console in an orderly way (I can also just run one cell, or even one line or group of lines, at a time). More, Spyder keeps track of objects, variables, and files for me, which seems like it'll make for more fluid coding. I still don't get how best to use the actual debugging menu, but it seems potentially useful, e.g. for plugging in different values for a variable without having to return to the source code to do so. 
+>> Useful Spyder keyboard shortcuts include:
+>> - `F5`, which executes the current editor file in the console
+>> - `Tab`, which auto-completes names or gives you a list of names to choose from, once you've defined them and are wanting to write them again
+>> - `Cmd+Enter`, which executes the current cell (from editor, to console)
+>> - `Shift+Enter`, executes current cell and moves to next one
+>> - `Alt+<Up Arrow>` or `+<Down arrow>` moves highlighted or current line(s) up or down
+>> - `Shift+Cmd+Alt+M`, which maximizes the current window or changes maximized window back to normal
+>> - `Cmd+/-`, to change font size
+>> - `Cmd+S`, to save
+>> - `Cmd+I`, which, when pressed while the cursor is on an object, opens documentation for that object in the object inspector
+>> - `u`, `d` at the debugger, which navigates the inspection point up or down the stack.
+>> Also useful are `%pandas inline` and `%pandas qt`, to get figures to appear inline in IPython console or in their own window (Qt window)
+>> Plugins and toolbars can be arranged as needed, and any one window can be maximized with `Shift+Cmd+Alt+M`. Calling `spyder --reset` from the command line resets all customization.
 
 ---
