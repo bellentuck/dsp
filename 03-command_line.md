@@ -94,15 +94,16 @@ What does `xargs` do? Give an `example` of how to use it.
 
 > > Here's an `example` of this common use of `xargs`: 
 
-> > `$ ls
+> > ```$ ls
 
-> > `abc.a  abc.b  abc.c  bca.a  bca.b  bca.c
+> > abc.a  abc.b  abc.c  bca.a  bca.b  bca.c
 
-> > `$ find . -name "*.c" | xargs rm -rf
+> > $ find . -name "*.c" | xargs rm -rf
 
-> > `$ ls
+> > $ ls
 
-> > `abc.a  abc.b  bca.a  bca.b`
+> > abc.a  abc.b  bca.a  bca.b
+```
 
 > > The above example forces the recursive removal of its `xargs` input, viz., all files ending in `".c"`. Adding `-print0` after `"*.c"` and `-0` after `xargs` will additionally include filenames containing spaces in the `xargs` input.
 
@@ -110,18 +111,19 @@ What does `xargs` do? Give an `example` of how to use it.
 
 > > Here's an `example` (for the sake of this example let's say we haven't yet recursively removed all files ending in `".c"`):
 
-> > `$ ls
+> > ```$ ls
 
-> > `abc.a  abc.b  abc.c  bca.a  bca.b  bca.c
+> > abc.a  abc.b  abc.c  bca.a  bca.b  bca.c
 
-> > `$ find . -name "*.c" | xargs grep "[string contained once in abc.a, once in abc.b, twice in abc.c, and once in bca.c]"
+> > $ find . -name "*.c" | xargs grep "[string contained once in abc.a, once in abc.b, twice in abc.c, and once in bca.c]"
 
-> > `./abc.c:[line containing first instance of string]
+> > ./abc.c:[line containing first instance of string]
 
-> > `./abc.c:[line containing second instance of string]
+> > ./abc.c:[line containing second instance of string]
 
-> > `./bca.c:[line containing first instance of string]`
-
+> > ./bca.c:[line containing first instance of string]
+```
+> >
 
 > > As a final note, `X | xargs Y` is not a more redundant form of `X | Y`. `xargs` makes it possible to "batch" arguments together, thereby avoiding "Argument list too long" messages on older kernels for long command lines. And `xargs` is useful when wanting to both know what the output contents from `X` are and be able to execute a new command, `Y`, on them (e.g., for directory listings).
 
