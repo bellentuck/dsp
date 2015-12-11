@@ -93,34 +93,24 @@ What does `xargs` do? Give an `example` of how to use it.
 > > - `find X | xargs Y`, where `X`=what there is to be found (seems like this tends to be a name) and `Y` is a command. 
 
 > > Here's an `example` of this common use of `xargs`: 
-
-> > ```$ ls
-
-> > abc.a  abc.b  abc.c  bca.a  bca.b  bca.c
-
-> > $ find . -name "*.c" | xargs rm -rf
-
+```
 > > $ ls
-
+> > abc.a  abc.b  abc.c  bca.a  bca.b  bca.c
+> > $ find . -name "*.c" | xargs rm -rf
+> > $ ls
 > > abc.a  abc.b  bca.a  bca.b
 ```
-
 > > The above example forces the recursive removal of its `xargs` input, viz., all files ending in `".c"`. Adding `-print0` after `"*.c"` and `-0` after `xargs` will additionally include filenames containing spaces in the `xargs` input.
 
 > > The `find X | xargs Y` form might also incorporate `grep` in command `Y`, in order to find a particular string in a particular set of files.
 
 > > Here's an `example` (for the sake of this example let's say we haven't yet recursively removed all files ending in `".c"`):
-
-> > ```$ ls
-
+```
+> > $ ls
 > > abc.a  abc.b  abc.c  bca.a  bca.b  bca.c
-
 > > $ find . -name "*.c" | xargs grep "[string contained once in abc.a, once in abc.b, twice in abc.c, and once in bca.c]"
-
 > > ./abc.c:[line containing first instance of string]
-
 > > ./abc.c:[line containing second instance of string]
-
 > > ./bca.c:[line containing first instance of string]
 ```
 > >
