@@ -92,7 +92,7 @@ What does `xargs` do? Give an `example` of how to use it.
 > > - `xargs -t`, which will execute the command `/bin/echo X` where `X`=input
 > > - `find X | xargs Y`, where `X`=what there is to be found (seems like this tends to be a name) and `Y` is a command. 
 
-> > Here's an `example` of this common use of `xargs`: 
+> > Here's an `example` of a common use of the `xargs` form `find X | xargs Y`: 
 ```
 > > $ ls
 > > abc.a  abc.b  abc.c  bca.a  bca.b  bca.c
@@ -102,9 +102,7 @@ What does `xargs` do? Give an `example` of how to use it.
 ```
 > > The above example forces the recursive removal of its `xargs` input, viz., all files ending in `".c"`. Adding `-print0` after `"*.c"` and `-0` after `xargs` will additionally include filenames containing spaces in the `xargs` input.
 
-> > The `find X | xargs Y` form might also incorporate `grep` in command `Y`, in order to find a particular string in a particular set of files.
-
-> > Here's an `example` (for the sake of this example let's say we haven't yet recursively removed all files ending in `".c"`):
+> > The `find X | xargs Y` form might also incorporate `grep` in command `Y`, in order to find a particular string in a particular set of files. Here's an `example` (for the sake of this example let's say we haven't yet recursively removed all files ending in `".c"`):
 ```
 > > $ ls
 > > abc.a  abc.b  abc.c  bca.a  bca.b  bca.c
@@ -115,7 +113,7 @@ What does `xargs` do? Give an `example` of how to use it.
 ```
 > >
 
-> > As a final note, `X | xargs Y` is not a more redundant form of `X | Y`. `xargs` makes it possible to "batch" arguments together, thereby avoiding "Argument list too long" messages on older kernels for long command lines. And `xargs` is useful when wanting to both know what the output contents from `X` are and be able to execute a new command, `Y`, on them (e.g., for directory listings).
+> > As a final note, `X | xargs Y` is not always a more redundant form of `X | Y`. `xargs` makes it possible to "batch" arguments together, thereby avoiding "Argument list too long" messages on older kernels for long command lines. And `xargs` is useful when wanting to both know what the output contents from `X` are and be able to execute a new command, `Y`, on them (e.g., for directory listings).
 
 ---
 
