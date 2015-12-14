@@ -52,21 +52,21 @@ $ b = ['pillows', 'pillows', 'couch']
 $ c = set(a)  # = set(['sofa', 'pillows'])
 $ d = {'couch', 'pillows'}  # also a set
 ```
->> `add` vs. `append`: semantically equivalent, syntactically distinct
+>> First example: `add` vs. `append`: semantically equivalent, syntactically distinct
 ```
 $ a.append('plastic coverings')
 $ c.add('plastic coverings')
 $ print a, c
 ['sofa', 'pillows', 'pillows', 'plastic coverings'] set(['sofa', 'pillows', 'plastic coverings'])
 ```
->> `concatination` vs. `union`: semantically similar, syntactically distinct 
+>> Second example: `concatination` vs. `union`: semantically similar, syntactically distinct 
 ```
 $ print a + b
 $ print c | d
 ['sofa', 'pillows', 'pillows', 'plastic coverings', 'pillows', 'pillows', 'couch']
 set(['sofa', 'couch', 'pillows', 'plastic coverings'])
 ```
->> `concatination` vs. `intersection`: syntactically similar, semantically distinct
+>> Third example: `concatination` vs. `intersection`: syntactically similar, semantically distinct
 ```
 $ print a + b
 $ print c & d
