@@ -40,31 +40,34 @@ How are Python lists and sets similar and different? Give examples of using both
 >> Main differences:
 - Sets are unordered, like dictionaries w/o values; lists are ordered 
 - Sets don't repeat elements; lists can
-- Sets are implemented with hash tables and can therefore locate member-elements MUCH more quickly than lists
+- Sets are implemented with hash tables and can therefore locate member-elements MUCH more quickly than lists can
 - Sets can make use of set-theoretical methods
 
 >> Sets are "unordered collections of unique elements" (Python Software Foundation, "The Python Standard Library," sect 8.7): like lists, sets are collections of elements; unlike lists, sets are unordered; and unlike lists, sets support only one instance of an element per set. Sets present ranges, not bundles, of items. "A set is a dictionary with no values. It has only unique keys. Its syntax is similar to that for a dictionary. But we omit the values, and can use complex, powerful set logic" (dotnetperls.com/set-python).
 
->> Here are some basic examples of using lists vs. sets:
+>> Here are some basic examples of using lists vs. sets.
 ```
 $ a = ['sofa', 'pillows', 'pillows']
 $ b = ['pillows', 'pillows', 'couch']
 $ c = set(a)  # = set(['sofa', 'pillows'])
 $ d = {'couch', 'pillows'}  # also a set
-$
-$ # add vs append: semantically equivalent, syntactically distinct
+```
+>> `add` vs. `append`: semantically equivalent, syntactically distinct
+```
 $ a.append('plastic coverings')
 $ c.add('plastic coverings')
 $ print a, c
 ['sofa', 'pillows', 'pillows', 'plastic coverings'] set(['sofa', 'pillows', 'plastic coverings'])
-$
-$ # concatination vs union: semantically similar, syntactically distinct 
+```
+>> `concatination` vs. `union`: semantically similar, syntactically distinct 
+```
 $ print a + b
 $ print c | d
 ['sofa', 'pillows', 'pillows', 'plastic coverings', 'pillows', 'pillows', 'couch']
 set(['sofa', 'couch', 'pillows', 'plastic coverings'])
-$
-$ # concatination vs intersection: syntactically similar, semantically distinct
+```
+>> `concatination` vs. `intersection`: syntactically similar, semantically distinct
+```
 $ print a + b
 $ print c & d
 ['sofa', 'pillows', 'pillows', 'plastic coverings', 'pillows', 'pillows', 'couch']
@@ -95,7 +98,7 @@ $     "iter_test(iterable)",
 $     setup="from __main__ import iter_test; iterable = list(range(10000))",
 $     number=10000)
 $
-$ print "\nAvg find times:"
+$ print "Avg find times:"
 $ print "Sets: ", timeit(
 $     "in_test(iterable)",
 $     setup="from __main__ import in_test; iterable = set(range(1000))",
@@ -110,7 +113,6 @@ $     number=10000)
 Avg iteration times:
 Sets:  1.92396998405
 Lists:  1.5951461792
-$
 Avg find times:
 Sets:  0.887874126434
 Lists:  96.5262088776
@@ -123,20 +125,20 @@ Lists:  96.5262088776
 
 Describe Python's `lambda`. What is it, and what is it used for? Give at least one example, including an example of using a `lambda` in the `key` argument to `sorted`.
 
->> `lambda`, and the form `lamba x: x`, is an alternate syntax or notation for functions in Python. Specifically `lambda` is used to create anonymous (unnamed) functions that do little pieces of work, often within other functions like `filter()`, `map()`, and `reduce()`, without the syntactic clutter of an explicitly defined function with explicitly returned output. 
+>> `lambda`, and the form `lambda x: x`, is an alternate syntax or notation for functions in Python. Specifically `lambda` is used to create anonymous (unnamed) functions that do little pieces of work, often within other functions like `filter()`, `map()`, and `reduce()`, without the syntactic clutter of an explicitly defined function with explicitly returned output. 
 
 >> In addition to using a `lambda` function within `filter()`, `map()`, and `reduce()`, which take function + list as arguments, we can use a `lambda` in the `key` argument to `sorted()`, which can take list + function:
 ```
 $ cousin_tuples = [
 $     ("brean", "momma's boy", 25),
 $     ("rebna", "father's pride", 11),
-$     ("abner', "father's pain", 16),
-$     ("sue", "daddy's lil angel", 2),
+$     ("abner", "father's pain", 16),
+$     ("sue", "grandpa's lil angel", 2),
 $ ]
 $
 $ sorted(cousin_tuples, key=lambda cousin: cousin[2])   # sort by age
-[("sue", "daddy's lil angel", 2), ("rebna", "father's pride", 11), \
-("abner', "father's pain", 16), ("brean", "momma's boy", 25),]
+[("sue", "grandpa's lil angel", 2), ("rebna", "father's pride", 11), \
+("abner", "father's pain", 16), ("brean", "momma's boy", 25),]
 ```
 >> `sorted()` can take one or two arguments: the simplest version of sort just sorts a list in the default Python order. The two-argument version of sort takes in both `list` and `key` arguments. The `key` specifies how the list is to be sorted. "The value of the `key` parameter should be a function that takes a single argument and returns a key to use for sorting purposes. This technique is fast because the key function is called exactly once for each input record" (Python Wiki, "Sorting Mini-HOW TO"). `lambda`'s a perfect fit for the job.
 
@@ -178,10 +180,10 @@ $ evens
 ```
 >> How do these latter functions compare to the list comprehensions? Both strategies generate the same results, and often either is viable. List comprehensions are more efficient and easier to read, however, and so are preferred when possible. But comprehensions have their limits: "when the construction rule is too complicated to be expressed with `for` and `if` statements, or if the construction rule can change dynamically at runtime," list comprehensions are too simple (secnetix.de, "Python: List Comprehensions").
 
->> To finish things off here are the set and dictionary comprehension versions of `reciprocals` and `evens`, too!
+>> To finish things off here are the set and dictionary comprehension versions of `reciprocals` and `evens`, too:
+
+>> Set comps:
 ```
-$ # set comps:
-$
 $ reciprocals = {1/float(n) for n in range(1, 11)}
 $ reciprocals
 [1.0, 0.5, 0.3333333333333333, 0.25, 0.2, 0.16666666666666666, \
@@ -190,10 +192,9 @@ $
 $ evens = {x for x in range(11) if x%2 == 0 if x > 0}
 $ evens
 {2, 4, 6, 8, 10}
-$
-$
-$ # dict comps:
-$
+```
+>> Dict comps:
+```
 $ reciprocals = {n : 1/float(n) for n in range(1, 11)}  # {key:val for key}
 $ reciprocals {1: 1.0, 2: 0.5, 3: 0.3333333333333333, 4: 0.25, 5: 0.2, \
 6: 0.16666666666666666, 7: 0.14285714285714285, 8: 0.125, \
