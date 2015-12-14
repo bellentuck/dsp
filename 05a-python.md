@@ -33,6 +33,16 @@ How are Python lists and tuples similar and different? Which will work as keys i
 
 How are Python lists and sets similar and different? Give examples of using both. How does performance compare between lists and sets for finding an element. Why?
 
+>> Main similarities:
+- Both lists and sets are comma-separated sequences of values (elements)
+- Both can perform some of the same functions, like finding and iterating over elements
+
+>> Main differences:
+- Sets are unordered, like dictionaries w/o values; lists are ordered 
+- Sets don't repeat elements; lists can
+- Sets are implemented with hash tables and can therefore locate member-elements MUCH more quickly than lists
+- Sets can make use of set-theoretical methods
+
 >> Sets are "unordered collections of unique elements" (Python Software Foundation, "The Python Standard Library," sect 8.7): like lists, sets are collections of elements; unlike lists, sets are unordered; and unlike lists, sets support only one instance of an element per set. Sets present ranges, not bundles, of items. "A set is a dictionary with no values. It has only unique keys. Its syntax is similar to that for a dictionary. But we omit the values, and can use complex, powerful set logic" (dotnetperls.com/set-python).
 
 >> Here are some basic examples of using lists vs. sets:
@@ -41,19 +51,19 @@ $ a = ['sofa', 'pillows', 'pillows']
 $ b = ['pillows', 'pillows', 'couch']
 $ c = set(a)  # = set(['sofa', 'pillows'])
 $ d = {'couch', 'pillows'}  # also a set
-
+$
 $ # add vs append: semantically equivalent, syntactically distinct
 $ a.append('plastic coverings')
 $ c.add('plastic coverings')
 $ print a, c
 ['sofa', 'pillows', 'pillows', 'plastic coverings'] set(['sofa', 'pillows', 'plastic coverings'])
-
+$
 $ # concatination vs union: semantically similar, syntactically distinct 
 $ print a + b
 $ print c | d
 ['sofa', 'pillows', 'pillows', 'plastic coverings', 'pillows', 'pillows', 'couch']
 set(['sofa', 'couch', 'pillows', 'plastic coverings'])
-
+$
 $ # concatination vs intersection: syntactically similar, semantically distinct
 $ print a + b
 $ print c & d
