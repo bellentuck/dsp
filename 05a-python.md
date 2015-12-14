@@ -73,44 +73,44 @@ set(['pillows'])
 
 >> Lists and sets can both be used to find and iterate over elements. Importing the module `timeit`, we can compare performance between lists and sets. The following is the code I used to run performance comparisons for iterating over elements and for finding them:
 ```
-def iter_test(iterable):
-    """Test: iterating over elements"""
-    for i in iterable:
-        pass
-
-def in_test(iterable):
-    """Test: finding elements"""
-    for i in range(1000):
-        if i in iterable:
-            pass
-
-from timeit import timeit
-print "Avg iteration times:"
-print "Sets: ", timeit(
-    "iter_test(iterable)",
-    setup="from __main__ import iter_test; iterable = set(range(10000))",
-    number=10000)
-print "Lists: ", timeit(
-    "iter_test(iterable)",
-    setup="from __main__ import iter_test; iterable = list(range(10000))",
-    number=10000)
-
-print "\nAvg find times:"
-print "Sets: ", timeit(
-    "in_test(iterable)",
-    setup="from __main__ import in_test; iterable = set(range(1000))",
-    number=10000)
-print "Lists: ", timeit(
-    "in_test(iterable)",
-    setup="from __main__ import in_test; iterable = list(range(1000))",
-    number=10000) 
+$ def iter_test(iterable):
+$     """Test: iterating over elements"""
+$     for i in iterable:
+$         pass
+$
+$ def in_test(iterable):
+$     """Test: finding elements"""
+$     for i in range(1000):
+$         if i in iterable:
+$             pass
+$
+$ from timeit import timeit
+$ print "Avg iteration times:"
+$ print "Sets: ", timeit(
+$     "iter_test(iterable)",
+$     setup="from __main__ import iter_test; iterable = set(range(10000))",
+$     number=10000)
+$ print "Lists: ", timeit(
+$     "iter_test(iterable)",
+$     setup="from __main__ import iter_test; iterable = list(range(10000))",
+$     number=10000)
+$
+$ print "\nAvg find times:"
+$ print "Sets: ", timeit(
+$     "in_test(iterable)",
+$     setup="from __main__ import in_test; iterable = set(range(1000))",
+$     number=10000)
+$ print "Lists: ", timeit(
+$     "in_test(iterable)",
+$     setup="from __main__ import in_test; iterable = list(range(1000))",
+$     number=10000) 
 ```
 >> Here's the output:
 ```
 Avg iteration times:
 Sets:  1.92396998405
 Lists:  1.5951461792
-
+$
 Avg find times:
 Sets:  0.887874126434
 Lists:  96.5262088776
@@ -128,11 +128,12 @@ Describe Python's `lambda`. What is it, and what is it used for? Give at least o
 >> In addition to using a `lambda` function within `filter()`, `map()`, and `reduce()`, which take function + list as arguments, we can use a `lambda` in the `key` argument to `sorted()`, which can take list + function:
 ```
 $ cousin_tuples = [
-      ("brean", "momma's boy", 25),
-      ("rebna", "father's pride", 11),
-      ("abner', "father's pain", 16),
-      ("sue", "daddy's lil angel", 2),
-]
+$     ("brean", "momma's boy", 25),
+$     ("rebna", "father's pride", 11),
+$     ("abner', "father's pain", 16),
+$     ("sue", "daddy's lil angel", 2),
+$ ]
+$
 $ sorted(cousin_tuples, key=lambda cousin: cousin[2])   # sort by age
 [("sue", "daddy's lil angel", 2), ("rebna", "father's pride", 11), \
 ("abner', "father's pain", 16), ("brean", "momma's boy", 25),]
@@ -159,7 +160,7 @@ $ reciprocals = [1/float(n) for n in range(1, 11)]  # common application [a]
 $ reciprocals
 [1.0, 0.5, 0.3333333333333333, 0.25, 0.2, 0.16666666666666666, \
 0.14285714285714285, 0.125, 0.1111111111111111, 0.1]
-
+$
 $ evens = [x for x in range(11) if x%2 == 0 if x > 0]  # common application [b]
 $ evens
 [2, 4, 6, 8, 10]
@@ -170,7 +171,7 @@ $ reciprocals = map(lambda n: 1/float(n), range(1, 11))
 $ reciprocals
 [1.0, 0.5, 0.3333333333333333, 0.25, 0.2, 0.16666666666666666, \
 0.14285714285714285, 0.125, 0.1111111111111111, 0.1]
-
+$
 $ evens = filter(lambda x: x%2 == 0 and x > 0, range(11))
 $ evens
 [2, 4, 6, 8, 10]
@@ -179,25 +180,25 @@ $ evens
 
 >> To finish things off here are the set and dictionary comprehension versions of `reciprocals` and `evens`, too!
 ```
-# set comps:
-
+$ # set comps:
+$
 $ reciprocals = {1/float(n) for n in range(1, 11)}
 $ reciprocals
 [1.0, 0.5, 0.3333333333333333, 0.25, 0.2, 0.16666666666666666, \
 0.14285714285714285, 0.125, 0.1111111111111111, 0.1]
-
+$
 $ evens = {x for x in range(11) if x%2 == 0 if x > 0}
 $ evens
 {2, 4, 6, 8, 10}
-
-
-# dict comps:
-
+$
+$
+$ # dict comps:
+$
 $ reciprocals = {n : 1/float(n) for n in range(1, 11)}  # {key:val for key}
 $ reciprocals {1: 1.0, 2: 0.5, 3: 0.3333333333333333, 4: 0.25, 5: 0.2, \
 6: 0.16666666666666666, 7: 0.14285714285714285, 8: 0.125, \
 9: 0.1111111111111111, 10: 0.1}
-
+$
 $ evens {x : 'even' for x in range(11) if x%2 == 0 if x > 0}
 $ evens
 {2: 'even', 4: 'even', 6: 'even', 8: 'even', 10: 'even'}
