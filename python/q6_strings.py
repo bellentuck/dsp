@@ -1,6 +1,7 @@
 # Based on materials copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
 
+#%%
 
 def donuts(count):
     """
@@ -17,9 +18,19 @@ def donuts(count):
     'Number of donuts: many'
     >>> donuts(99)
     'Number of donuts: many'
-    """
-    raise NotImplementedError
+    """    
+    
+    if type(count) != int:
+        raise Exception('This function requires an integer as input.')
+    
+    if 0 <= count < 10:
+        return 'Number of donuts: ' + str(count)    
+    else:
+        return 'Number of donuts: many'
+    
+    #raise NotImplementedError
 
+#%%
 
 def both_ends(s):
     """
@@ -37,8 +48,19 @@ def both_ends(s):
     >>> both_ends('xyz')
     'xyyz'
     """
-    raise NotImplementedError
+   
+    if type(s) != str:
+        raise Exception('This function requires a string as input.')
+        
+    elif len(s) >= 2:
+        s = s[0:2] + s[-2:]  
+        return s
+    else:
+        return ''     
+    
+    #raise NotImplementedError
 
+#%%
 
 def fix_start(s):
     """
@@ -56,8 +78,14 @@ def fix_start(s):
     >>> fix_start('donut')
     'donut'
     """
-    raise NotImplementedError
+    
+    s = list(s) 
+    return s[0] + ''.join([char.replace(char, '*') if char == s[0] \
+                  else char for char in s[1:]])
+    
+    #raise NotImplementedError
 
+#%%
 
 def mix_up(a, b):
     """
@@ -74,8 +102,14 @@ def mix_up(a, b):
     >>> mix_up('pezzy', 'firm')
     'fizzy perm'
     """
-    raise NotImplementedError
 
+    new_a = a.replace(a[0:2], b[0:2]) 
+    new_b = b.replace(b[0:2], a[0:2])
+    return new_a + ' ' + new_b 
+   
+    #raise NotImplementedError
+
+#%%
 
 def verbing(s):
     """
@@ -86,13 +120,26 @@ def verbing(s):
 
     >>> verbing('hail')
     'hailing'
-    >>> verbing('swiming')
-    'swimingly'
+    >>> verbing('swimming')
+    'swimmingly'
     >>> verbing('do')
     'do'
     """
-    raise NotImplementedError
+    
+    if type(s) != str:
+        raise Exception('This function requires a string as input.')    
+    
+    if len(s) < 3:
+        return s
+    else:
+        if s[-3:] == 'ing':
+            return s + 'ly'
+        else:
+            return s + 'ing'        
+    
+    #raise NotImplementedError
 
+#%%
 
 def not_bad(s):
     """
@@ -111,8 +158,19 @@ def not_bad(s):
     >>> not_bad("It's bad yet not")
     "It's bad yet not"
     """
-    raise NotImplementedError
 
+    not_string = s.find('not')
+    bad_string = s.find('bad') + 3
+
+    if not_string != -1 and bad_string > not_string:
+        s = s.replace(s[not_string:bad_string], 'good')
+        return s
+    else:
+        return s
+    
+    #raise NotImplementedError
+
+#%%
 
 def front_back(a, b):
     """
@@ -130,4 +188,26 @@ def front_back(a, b):
     >>> front_back('Kitten', 'Donut')
     'KitDontenut'
     """
-    raise NotImplementedError
+
+    split = lambda x: len(x)/2 + 1      
+    
+    if type(a) != str or type(b) != str:
+        raise Exception('This function requires two strings as input.')
+        
+    if len(a) % 2 == 0:
+        a_front = a[:len(a)/2]
+        a_back = a[len(a)/2:]
+    else:
+        a_front = a[:split(a)]
+        a_back = a[split(a):]
+
+    if len(b) % 2 == 0:
+        b_front = b[:len(b)/2]
+        b_back = b[len(b)/2:]
+    else:
+        b_front = b[:split(b)]
+        b_back = b[split(b):]
+
+    return a_front + b_front + a_back + b_back
+    
+    #raise NotImplementedError
