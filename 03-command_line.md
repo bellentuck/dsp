@@ -30,42 +30,44 @@ ne. (`find` = find files)
 
 > > 6. `rm x.txt y.txt` = deletes files. `rm -rf x y` = for directories.
 
+> > 7. `curl -o x.txt 'url'` = download file from `'url'`; save as `x.txt` in current working directory.
+
 
 > > DIRECTORIES
 
-> > 7. `pwd` = print working directory. see where you are
+> > 8. `pwd` = print working directory. see where you are
 
-> > 8. `ls` = list working directory contents
+> > 9. `ls` = list working directory contents
 
-> > 9. `cd` = change directory
+> > 10. `cd` = change directory
 
-> > 10. `mkdir x` = make a new directory, `x`
+> > 11. `mkdir x` = make a new directory, `x`
 
-> > 11. `rmdir x` = remove directory `x` 
+> > 12. `rmdir x` = remove directory `x` 
 
-> > 12. `pushd x/y/z` = "save where I am, then go to directory `z` [path `x/y/z`]". With no arguments, loops btwn current directory and last one you pushd from.
+> > 13. `pushd x/y/z` = "save where I am, then go to directory `z` [path `x/y/z`]". With no arguments, loops btwn current directory and last one you pushd from.
 
-> > 13. `popd` = takes you back to last directory you `pushd` from. Doesn't take arguments. (Takes you back up the "directory stack" it's been keeping track of, until you reach the beginning of the `pushd` chain at which point the stack is empty.)
+> > 14. `popd` = takes you back to last directory you `pushd` from. Doesn't take arguments. (Takes you back up the "directory stack" it's been keeping track of, until you reach the beginning of the `pushd` chain at which point the stack is empty.)
 
 
 > > REDIRECTION 
 
-> > 14. `x-command|y-command` = pipe `x-command`-output to `y-command` as input
+> > 15. `x-command|y-command` = pipe `x-command`-output to `y-command` as input
 
-> > 15. `program<file` = sends `file` input to `program`
+> > 16. `program<file` = sends `file` input to `program`
 
-> > 16. `command>file` = write `command`-output to `file`. Just `cat>file` allows you to write into a file from command line. Close the file with `CTRL-d`! (`C-d` in Emacs)
+> > 17. `command>file` = write `command`-output to `file`. Just `cat>file` allows you to write into a file from command line. Close the file with `CTRL-d`! (`C-d` in Emacs)
 
-> > 17. `command>>file` = append `command`-output to `file`
+> > 18. `command>>file` = append `command`-output to `file`
 
 
 > > MISC
 
-> > 18. `echo $X` = print some argument(s) `X`
+> > 19. `echo $X` = print some argument(s) `X`
 
-> > 19. `export X=""` = export/set a new environment variable, `X`
+> > 20. `export X=""` = export/set a new environment variable, `X`
 
-> > 20. `unset X` = remove `X` from environment
+> > 21. `unset X` = remove `X` from environment
 
 
 ---
