@@ -8,6 +8,10 @@ def match_ends(words):
     where the string length is 2 or more and the first and last chars
     of the string are the same.
 
+    words = list of strings
+    w = string 
+    count = number of strings where criteria are True
+    
     >>> match_ends(['aba', 'xyz', 'aa', 'x', 'bbb'])
     3
     >>> match_ends(['', 'x', 'xy', 'xyx', 'xx'])
@@ -15,8 +19,17 @@ def match_ends(words):
     >>> match_ends(['aaa', 'be', 'abc', 'hello'])
     1
     """
-    raise NotImplementedError
+   
+    count = 0   
+   
+    for w in words:
+        if len(w) >= 2 and w[0] == w[-1]:
+            count += 1
+    return count
+   
+   #raise NotImplementedError
 
+#%%
 
 def front_x(words):
     """
@@ -32,8 +45,15 @@ def front_x(words):
     >>> front_x(['mix', 'xyz', 'apple', 'xanadu', 'aardvark'])
     ['xanadu', 'xyz', 'aardvark', 'apple', 'mix']
     """
-    raise NotImplementedError
+    
+    words = sorted(words) 
+    x_strings = filter(lambda char: char[0] == 'x', words)
+    non_x_strings = filter(lambda char: char[0] != 'x', words)
+    return x_strings + non_x_strings
+    
+    #raise NotImplementedError
 
+#%%
 
 def sort_last(tuples):
     """
@@ -49,8 +69,12 @@ def sort_last(tuples):
     >>> sort_last([(1, 7), (1, 3), (3, 4, 5), (2, 2)])
     [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
     """
-    raise NotImplementedError
+    
+    return sorted(tuples, key=lambda x: x[-1]) 
+    
+    #raise NotImplementedError
 
+#%%
 
 def remove_adjacent(nums):
     """
@@ -68,8 +92,20 @@ def remove_adjacent(nums):
     >>> remove_adjacent([])
     []
     """
-    raise NotImplementedError
+      
+    nums_new = []
+    n_prev = None 
+    
+    for n in nums:
+        if n != n_prev:
+            nums_new.append(n)
+        n_prev = n
+    
+    return nums_new
+    
+    #raise NotImplementedError
 
+#%%
 
 def linear_merge(list1, list2):
     """
@@ -85,4 +121,7 @@ def linear_merge(list1, list2):
     >>> linear_merge(['aa', 'aa'], ['aa', 'bb', 'bb'])
     ['aa', 'aa', 'aa', 'bb', 'bb']
     """
-    raise NotImplementedError
+
+    return sorted(list1 + list2)  
+   
+    #raise NotImplementedError
