@@ -2,7 +2,7 @@ import numpy as np
 #from itertools import islice
 #import re
 import collections
-from pprint import pprint
+import pprint
 
 
 class Faculty(object):
@@ -107,7 +107,7 @@ class Faculty(object):
                 print "%s: [\ \n%s\n]," % (k, d[k])
                 c += 1
         print "}"                
-                            
+        
 
 upenn_biostats = Faculty('/Users/Ben/ds/metis/prework/dsp/python/faculty.csv')    
 

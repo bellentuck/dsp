@@ -68,8 +68,9 @@ class Faculty(object):
             # Test: print total 
         for category in types:
             #freq[category] = float(types[category]) / float(total)
-            freq[category] = '%f%%' % ((float(types[category]) / 
-                             float(total))*100.0)
+            freq[category] = types[category]
+            #'%f%%' % ((float(types[category]) / 
+            #                 float(total))*100.0)
         return freq
 
     def get_emails(self):
@@ -96,19 +97,19 @@ print '\n'
 print "How many different types of degrees are held by faculty? \
 %d" % len(Faculty.degree_types(upenn_biostats))  
 # Q1b
-print "Frequency of degrees:", Faculty.frequencies(
-                                                  upenn_biostats, Faculty.\
-                                                  degree_types(upenn_biostats)
-                                                  )
+print "Degree frequencies:", Faculty.frequencies(
+                                                upenn_biostats, Faculty.\
+                                                degree_types(upenn_biostats)
+                                                )
 print '\n'
 # Q2a
 print "How many different kinds of titles are held by faculty? \
 %d" % len(Faculty.title_types(upenn_biostats)) 
 # Q2b
-print "Frequency of titles:", Faculty.frequencies(
-                                                 upenn_biostats, Faculty.\
-                                                 title_types(upenn_biostats)
-                                                 ) 
+print "Title frequencies:", Faculty.frequencies(
+                                               upenn_biostats, Faculty.\
+                                               title_types(upenn_biostats)
+                                               ) 
 print '\n'                                                
 # Q3
 Faculty.get_emails(upenn_biostats)
