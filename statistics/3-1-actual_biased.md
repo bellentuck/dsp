@@ -65,4 +65,4 @@ actual mean: 1.02420515504
 biased mean: 2.40367910066
 ```
 
->> However we may tend to assume that bias "matters", we now have shown just how much havoc a simple form of bias can statistically wreak. The biased distribution of number of children under 18 in a given household is a whopping 240% greater than the actual distribution of the same.
+>> However we may tend to assume that bias "matters", we now have shown just how much havoc a simple form of bias can statistically wreak. The biased distribution of number of children under 18 in a given household outputs a whopping 240% greater mean number of kids than that taken from the actual distribution of the same.
