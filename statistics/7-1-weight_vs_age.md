@@ -59,7 +59,7 @@ def ScatterPlot(ages, weights, alpha=1.0):
 ```
 >> Calling `ScatterPlot` on `ages` and `weights`, with `alpha` set to `0.1`--`ScatterPlot(ages, weights, alpha=0.1)`--we get the following plot:
 
->> [1] + link
+>> [1] <a href="https://github.com/bellentuck/dsp/blob/a2569c327a86c17002d0e7165e957d197258f84c/thinkstats_scatter_1.png"><img src="img/thinkstats_scatter_1.png" style="width: 100px;" target="_blank"></a>
 
 >> Calling Downey's method `BinnedPercentiles` on `live`--`BinnedPercentiles(live)`--in between steps (1) and (2) adds lines the the plot representing 25th, 50th, and 75th percentiles:
 ```
@@ -77,7 +77,7 @@ def BinnedPercentiles(df):
         label = '%dth' % percent
         thinkplot.Plot(ages, weights, label=label)
 ```
->> [2] + link
+>> [2] <a href="https://github.com/bellentuck/dsp/blob/a2569c327a86c17002d0e7165e957d197258f84c/thinkstats_scatter_2.png"><img src="img/thinkstats_scatter_2.png" style="width: 100px;" target="_blank"></a>
 
 >> Birth weight seems slightly to increase as mother's age increases, but the effect is miniscule and, as a result, the slope of the data (and that of the percentile lines) seems nearly flat; i.e., 0.
 
@@ -89,7 +89,7 @@ def BinnedPercentiles(df):
                      ylim=[5, 10],  #was [0,15]
                      legend=False)
 ```
->> [3] + link
+>> [3] <a href="https://github.com/bellentuck/dsp/blob/a2569c327a86c17002d0e7165e957d197258f84c/thinkstats_scatter_3.png"><img src="img/thinkstats_scatter_3.png" style="width: 100px;" target="_blank"></a>
 
 >> At this level the data appears to concentrate around whole numbers on the y-axis: 6, 7, 8, 9. Probably this is because weights near whole numbers get rounded to whole numbers. But we're tracking a very subtle increase in weight, so the rounding is a problem. Fortunately, we can fix it by jittering the data:
 ```
@@ -98,10 +98,10 @@ weights = thinkstats2.Jitter(weights, 0.5)
 ```
 >> Here's how things shape up without `BinnedPercentiles`:
 
->> [4] + link
+>> [4] <a href="https://github.com/bellentuck/dsp/blob/a2569c327a86c17002d0e7165e957d197258f84c/thinkstats_scatter_4.png"><img src="img/thinkstats_scatter_4.png" style="width: 100px;" target="_blank"></a>
 
 >> And with `BinnedPercentiles`:
 
->> [5] + link
+>> [5] <a href="https://github.com/bellentuck/dsp/blob/a2569c327a86c17002d0e7165e957d197258f84c/thinkstats_scatter_5.png"><img src="img/thinkstats_scatter_5.png" style="width: 100px;" target="_blank"></a>
 
->> Personally I think the lines are a bit distracting. They seem to each be subtle variations on the theme of there tending to be a slight increase in average birth weight as mothers' ages go up, a conclusion we can already gather from the picture without the binned percentile lines, especially in conjunction with Pearson's and Spearman's correlations. The scatter plot gives us the big picture, and Pearson's and Spearman's correlations give us a more precise (read: mathematical) sense of how strong the correlation between birth weight and mother's age is. 
+>> Personally I think the lines are a bit distracting. They seem to each be subtle variations on the theme of there tending to be a slight increase in average birth weight as mothers' ages go up, a conclusion we can already gather from the picture without the binned percentile lines, especially in conjunction with Pearson's and Spearman's correlations. The scatter plot gives us the big picture, and Pearson's and Spearman's correlations give us a more precise (read: mathematical) sense of how strong the correlation between birth weight and mother's age is.
