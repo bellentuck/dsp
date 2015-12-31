@@ -82,15 +82,24 @@ Elvis Presley had a twin brother who died at birth.  What is the probability tha
 
 >> (4) p(A) = prior probability for fraternal twins = 1/125
 
->> (5) p(C|A) = likelihood that fraternal twins are boys = 1/2 * 1/2 = 1/4, given even chances of a twin's being male or female
+>> (5) p(C|A) = likelihood that fraternal twins are boys 
+>> = 1/2 * 1/2 = 1/4, given even chances of a twin's being male or female
 
 >> (6) p(B) = prior probability for identical twins = 1/300
 
->> (7) p(C|B) = likelihood that identical twins are male = 1/2 * 1 = 1/2, as identical twins share the same DNA and are therefore the same sex
+>> (7) p(C|B) = likelihood that identical twins are male 
+>> = 1/2 * 1 = 1/2, as identical twins share the same DNA and are therefore the same sex
 
->> (8) p(C) = probability of twin brothers = p(A)*p(C|A) + p(B)*p(C|B), following from Law of Total Probability = (1/125)*(1/4) + (1/300)*(1/2) = 1/500 + 1/600 = 6/3000 + 5/3000 = 11/3000
+>> (8) p(C) = probability of twin brothers 
+>> = [p(A) * p(C|A)] + [p(B) * p(C|B)], following from Law of Total Probability
+>> = [(1/125) * (1/4)] + [(1/300) * (1/2)] 
+>> = 1/500 + 1/600 = 6/3000 + 5/3000 = 11/3000
 
->> (9) p(B|C) = probability of identical twins given twin brothers = [p(B)*p(C|B)]/p(C), following from Bayes' Theorem = [(1/300)*(1/2)]/(11/3000) = (1/600)*(3000/11) = 3000/6600 = 30/66 = 5/11
+>> (9) p(B|C) = probability of identical twins given twin brothers 
+>> = [p(B) * p(C|B)] / p(C), following from Bayes' Theorem 
+>> = [(1/300) * (1/2)] / (11/3000) 
+>> = (1/600) * (3000/11) 
+>> = 3000/6600 = 30/66 = 5/11
 
 >> The probability that Elvis was an identical twin is 5/11, or a little over 45%. 5:6 odds--who knew! (probably many).
 
