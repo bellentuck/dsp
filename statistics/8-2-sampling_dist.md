@@ -73,7 +73,7 @@ def SimulateSample(lam, n, m):
 ('standard error', 0.8077354609638567)
 ('confidence interval', (1.2539059715743179, 3.5499397034956872))
 ```
->> [1] + link
+>> [1] <a href="https://github.com/bellentuck/dsp/blob/c2ec52baa8eae6c3465aafd57e92e0b33a473164/thinkstats_sampledist_1.png"><img src="img/thinkstats_sampledist_1.png" style="width: 100px;" target="_blank"></a>
 
 >> Calling `SimulateSample` a few more times with the same arguments generated the following SE and CI outputs:
 ```
@@ -147,7 +147,7 @@ def make_plots(start, stop, step):
 ```
 make_plots(10, 110, 10)
 ```
->> [2] + link
+>> [2] <a href="https://github.com/bellentuck/dsp/blob/c2ec52baa8eae6c3465aafd57e92e0b33a473164/thinkstats_sampledist_2.png"><img src="img/thinkstats_sampledist_2.png" style="width: 100px;" target="_blank"></a>
 
 >> It appears that a sample size of 10 is significantly more error-prone, and has a significantly greater 90% CI than larger sample sizes. Values progressively stabilize as we move from n=20 to n=70 (a sample size of 40, in particular, appears to be a small sample size worth aiming for), and for sample sizes >= 70 SE and CIs appear to be relatively stable. Of course these are rough estimates; increasing the sample size by 10 at a time gives us only a rough picture of what's going on.
 
@@ -155,7 +155,7 @@ make_plots(10, 110, 10)
 ```
 make_plots(10, 101, 1)
 ```
->> [3] + link
+>> [3] <a href="https://github.com/bellentuck/dsp/blob/c2ec52baa8eae6c3465aafd57e92e0b33a473164/thinkstats_sampledist_3.png"><img src="img/thinkstats_sampledist_3.png" style="width: 100px;" target="_blank"></a>
 
 >> While we appear to be getting about the same picture of what's going on here, incrementing the sample size by 1 gives us a somewhat smoother graph. 
 
@@ -163,11 +163,11 @@ make_plots(10, 101, 1)
 ```
 make_plots(100, 1001, 10)
 ```
->> [4] + link
+>> [4] <a href="https://github.com/bellentuck/dsp/blob/c2ec52baa8eae6c3465aafd57e92e0b33a473164/thinkstats_sampledist_4.png"><img src="img/thinkstats_sampledist_4.png" style="width: 100px;" target="_blank"></a>
 
 >> And again from 1000-10000:
 
->> [5] + link
+>> [5] <a href="https://github.com/bellentuck/dsp/blob/c2ec52baa8eae6c3465aafd57e92e0b33a473164/thinkstats_sampledist_5.png"><img src="img/thinkstats_sampledist_5.png" style="width: 100px;" target="_blank"></a>
 
 >> This is all to say that an intriguing pattern appears to have surfaced. 10^1 samples generate about a 3x greater level of error, and about a 3x larger confidence interval, than 10^2 samples. In turn, 10^2 samples generate about 3x greater SE and CI levels than 10^3 samples. Only at 10^4 samples does the sample size begin to have less of an effect on error (10000 samples generates more like 2x as much error as 1000 samples); yet 10^4 samples still bears the same 3:1 relation to 10^3 samples as far as the 90% CI goes.
 
