@@ -169,6 +169,6 @@ make_plots(100, 1001, 10)
 
 >> [5] + link
 
->> This is all to say that an intriguing pattern appears to have surfaced. 10/**1 samples generate about a 3x greater level of error, and about a 3x larger confidence interval, than 10/**2 samples. In turn, 10/**2 samples generate about 3x greater SE and CI levels than 10/**3 samples. Only at 10/**4 samples does the sample size begin to have less of an effect on error (10000 samples generates more like 2x as much error as 1000 samples); yet 10/**4 samples still bears the same 3:1 relation to 10/**3 samples as far as the 90% CI goes.
+>> This is all to say that an intriguing pattern appears to have surfaced. 10^1 samples generate about a 3x greater level of error, and about a 3x larger confidence interval, than 10^2 samples. In turn, 10^2 samples generate about 3x greater SE and CI levels than 10^3 samples. Only at 10^4 samples does the sample size begin to have less of an effect on error (10000 samples generates more like 2x as much error as 1000 samples); yet 10^4 samples still bears the same 3:1 relation to 10^3 samples as far as the 90% CI goes.
 
 >> While I don't have the mathematical vocabulary to abstract further from here, I get the sense that there's a broader, possibly logarithmic lesson to be taken on some level. 
