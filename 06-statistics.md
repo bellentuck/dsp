@@ -101,7 +101,42 @@ Elvis Presley had a twin brother who died at birth.  What is the probability tha
 ###Q8. Bayesian &amp; Frequentist Comparison  
 How do frequentist and Bayesian statistics compare?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> Probability:
+Frequentist probability = normative frequency (frequency over series of trials).
+Bayesian probability = subjective degree of belief (updated state of knowledge).
+
+>> Estimation: 
+Frequentist confidence intervals = Bayesian probabilities.
+
+>> Sampling:
+Frequentist sampling is a repeatable process that can be theoretically iterated infinite times (studies are taken to be repeatable).
+Bayesians observe fixed data from already-taken samples (studies are taken to be fixed).
+
+>> Hypothesis Testing:
+Frequentist M.O. = probability of data, given hypothesis. Data is random (sample-dependent); hypotheses/parameters are fixed (either true or false). Compare p-hat to a p-level, where p = probability of getting a result as extreme as the observed data if the null hypothesis were true, to determine cause for (a) statistical significance and (b) rejection of the null hypothesis. 
+Bayesian M.O. = probability of hypothesis, given data. Data is fixed (observed from a realized sample); hypotheses/parameters are random/unknown (can be described probabilistically). Use Bayes' Theorem to calculate p(H|D). Express the relationship between null and alternative hypotheses in terms of odds (posterior probability). There are no sufficiently "significant" results, just better odds.
+
+>> Results:
+Frequentist = statements about the world.
+Bayesian = statements about our beliefs.
+
+>> Strengths of frequentist statistics:
+Calculations are relatively simple.
+Explanations are technically objective.
+
+>> Criticisms of frequentist statistics:
+Calculations do not account for prior knowledge.
+Explanations are jargony and counter-intuitive.
+
+>> Strengths of Bayesian statistics:
+Calculations account for prior knowledge.
+Explanations make intuitive sense in natural language.
+
+>> Criticisms of Bayesian statistics:
+Calculations are relatively complex.
+Explanations are technically subjective (priors lack objectivity in that they don't have to come from anywhere in particular, but rather express subjective states of knowledge. They tend to be drawn from previous studies, published work, researcher intuition, substantive experts, convenience, nonparametric data, and other data sources).
+
+>> "A frequentist basically says, 'The world is a certain way, but I don’t know how it is. Further, I can’t necessarily tell how the world is just by collecting data, because data are always finite and noisy. So I’ll use statistics to line up the alternative possibilities, and see which ones the data more or less rule out.' A Bayesian basically says, 'I don’t know how the world is. All I have to go on is finite data. So I’ll use statistics to infer something from those data about how probable different possible states of the world are.'" -- Jeremy Fox, "Frequentist vs. Bayesian Statistics: Resources to Help You Choose"
 
 ---
 
