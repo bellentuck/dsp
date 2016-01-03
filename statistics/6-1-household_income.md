@@ -40,7 +40,7 @@ mean, median = density.Summarize(sample)
 
 >> Here's the graph and output:
 
->> [1] + link
+>> [1] <a href="https://github.com/bellentuck/dsp/blob/20c20065643d8ee1543a94660f70955c3dd3ad58/.thinkstats_skewness_1.png"><img src="img/.thinkstats_skewness_1.png" style="width: 100px;" target="_blank"></a>
 ```
 mean 74278.7075312
 std 93946.9299635
@@ -66,17 +66,17 @@ thinkplot.Pdf(pdf)
 thinkplot.Show(xlabel='household income',
                ylabel='PDF')
 ```
->> [2] + link
+>> [2] <a href="https://github.com/bellentuck/dsp/blob/20c20065643d8ee1543a94660f70955c3dd3ad58/.thinkstats_skewness_2.png"><img src="img/.thinkstats_skewness_2.png" style="width: 100px;" target="_blank"></a>
 
 >> Next, let's observe what happens when we change the upper bound. 
 
 >> (3) Household income vs. CDF for `log_upper=5.5`: 
 
->> [3] + link
+>> [3] <a href="https://github.com/bellentuck/dsp/blob/20c20065643d8ee1543a94660f70955c3dd3ad58/.thinkstats_skewness_3.png"><img src="img/.thinkstats_skewness_3.png" style="width: 100px;" target="_blank"></a>
 
 >> (4) Household income vs. PDF for `log_upper=5.5`:
 
->> [4] + link
+>> [4] <a href="https://github.com/bellentuck/dsp/blob/20c20065643d8ee1543a94660f70955c3dd3ad58/.thinkstats_skewness_4.png"><img src="img/.thinkstats_skewness_4.png" style="width: 100px;" target="_blank"></a>
 
 >> Here are the outputs:
 ```
