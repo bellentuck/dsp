@@ -138,6 +138,18 @@ Explanations are technically subjective (priors lack objectivity in that they do
 
 >> "A frequentist basically says, 'The world is a certain way, but I don’t know how it is. Further, I can’t necessarily tell how the world is just by collecting data, because data are always finite and noisy. So I’ll use statistics to line up the alternative possibilities, and see which ones the data more or less rule out.' A Bayesian basically says, 'I don’t know how the world is. All I have to go on is finite data. So I’ll use statistics to infer something from those data about how probable different possible states of the world are.'" -- Jeremy Fox, "Frequentist vs. Bayesian Statistics: Resources to Help You Choose"
 
+>> "Bayes [1] makes the additional assumption of a prior over θ [some underlying world state for which p(X1, . . . , Xn | θ) expresses a likelihood function over possible observations], and [2] optimizes for average-case performance rather than worst-case performance. It follows, then, that Bayes is the superior method whenever we can obtain a good prior and when good average-case performance is sufficient. However, if we have no way of obtaining a good prior, or when we need guaranteed performance, frequentist methods are the way to go.
+
+>> "A nice middle-ground between purely Bayesian and purely frequentist methods is to use a Bayesian model coupled with frequentist model-checking techniques; this gives us the freedom in modeling afforded by a prior but also gives us some degree of confidence that our model is correct." -- Jacob Steinhardt, "Beyond Bayesians and Frequentists"
+
+>> Also see: 
+
+>> Ben-Gal, "Bayesian Networks" (2007) --- Encyclopedia of Statistics in Quality and Reliability entry; BNs look a lot like OOP class-based structures --- http://www.eng.tau.ac.il/~bengal/BN.pdf
+
+>> Steinhardt, "Beyond Bayesians and Frequentists" (2012) --- short piece tying approaches to machine learning use cases --- http://cs.stanford.edu/~jsteinhardt/stats-essay.pdf 
+
+>> [links don't seem to link so google titles]
+
 ---
 
 ###Optional Exercises
