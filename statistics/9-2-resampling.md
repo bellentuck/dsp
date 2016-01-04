@@ -178,7 +178,6 @@ class PregLengthTest(HypothesisTest):
         firsts, others = self.data
         self.n = len(firsts)
         self.pool = np.hstack((firsts, others))
-
         pmf = thinkstats2.Pmf(self.pool)
         self.values = range(35, 44)
         self.expected_probs = np.array(pmf.Probs(self.values))
