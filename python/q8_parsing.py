@@ -30,3 +30,15 @@ class Football(object):
 
 epl = Football('/Users/Ben/ds/metis/prework/dsp/python/football.csv')
 print Football.get_team(epl, Football.get_min_score_difference(epl))
+
+
+
+"""This whole operation can also be completed far more succinctly using `pandas`."""
+
+import pandas as pd
+
+epl = pd.read_csv('/Users/Ben/ds/metis/prework/dsp/python/football.csv')
+goal_diffs = abs(epl['Goals']-epl['Goals Allowed'])
+epl.ix[list(goal_diffs).index(min(goal_diffs))]['Team']
+
+# Ain't pandas wonderful :)
