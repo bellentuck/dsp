@@ -106,7 +106,7 @@ Frequentist probability = normative frequency (frequency over series of trials).
 Bayesian probability = subjective degree of belief (updated state of knowledge).
 
 >> Estimation: 
-Frequentist confidence intervals = Bayesian probabilities.
+Frequentist "confidence" <-> Bayesian "credibility." (Of course confidence and credibility are not the same thing. Confidence, from *confidere*, connotes intensive trust, and more specifically intensive force of trust; the Latin *confident* means "having full trust." Credibility, from *credere*, has to do not with trust or faith (*fidere*) but with belief and believability.)
 
 >> Sampling:
 Frequentist sampling is a repeatable process that can be theoretically iterated infinite times (studies are taken to be repeatable).
